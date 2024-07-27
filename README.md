@@ -59,3 +59,7 @@ This project is set up with React working in Vite with HMR and some ESLint rules
 ## How to run the project in development mode with a specific port
 
 1. Run `npm run dev -- --port 3000`
+
+## Husky
+
+This project uses Husky to run the linting and testing scripts before committing the code. If the linting or testing scripts fail, the commit will be aborted. It automatically lint commit messages, code, and run tests upon committing or pushing.
