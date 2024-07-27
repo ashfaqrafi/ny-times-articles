@@ -9,13 +9,14 @@
     "lint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "jest",
-		"test:coverage": "jest --coverage",
+    "test:coverage": "jest --coverage",
     "prepare": "husky install",
     "cy:open-e2e": "cypress open --e2e --browser chrome",
     "cy:open-unit": "cypress open --component --browser chrome",
     "cy:run-e2e": "cypress run --e2e",
     "cy:run-unit": "cypress run --component",
-    "cy:e2e": "start-server-and-test start http-get://localhost:5173 cy:open-e2e"
+    "cy:e2e": "start-server-and-test start http-get://localhost:5173 cy:open-e2e",
+    "sonar": "sonar-scanner -X -Dsonar.projectKey=$SONAR_PROJECT_KEY -Dsonar.sources=. -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.token=$SONAR_TOKEN"
   },
   "jest": {
     "testEnvironment": "jsdom",
@@ -29,6 +30,12 @@
     },
     "setupFilesAfterEnv": [
       "<rootDir>/setupTests.js"
+    ],
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "lcov",
+      "text"
     ]
   },
   "dependencies": {
@@ -36,6 +43,7 @@
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.7.2",
     "axios-mock-jest": "^0.0.3",
+    "dotenv": "^16.4.5",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "history": "^5.3.0",
     "react": "^18.2.0",
@@ -80,6 +88,7 @@
     "postcss-modules": "^6.0.0",
     "prettier": "^3.0.3",
     "react-test-renderer": "^18.2.0",
+    "sonar-scanner": "^3.1.0",
     "tailwindcss": "^3.3.3",
     "vite": "^4.5.3",
     "vite-plugin-eslint": "^1.8.1",
