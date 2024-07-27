@@ -16,7 +16,7 @@
     "cy:run-e2e": "cypress run --e2e",
     "cy:run-unit": "cypress run --component",
     "cy:e2e": "start-server-and-test start http-get://localhost:5173 cy:open-e2e",
-    "sonar": "sonar-scanner -X -Dsonar.projectKey=$SONAR_PROJECT_KEY -Dsonar.sources=. -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.token=$SONAR_TOKEN"
+    "sonar": "sonar-scanner -Dsonar.projectKey=ny-times-articles -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_6d70d04f5d5ed27dd411cb994a34ccef4a0c3546"
   },
   "jest": {
     "testEnvironment": "jsdom",
