@@ -1,0 +1,6 @@
+{
+  "rules": {
+    "import/no-anonymous-default-export": 0
+  },
+  "extends": ["react-app"]
+}
